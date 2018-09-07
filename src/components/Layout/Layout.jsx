@@ -1,8 +1,9 @@
 import React from 'react'
+import Toolbar from '../Toolbar/Toolbar'
 
 const layout = (props) => (
     <div>
-        <p>Toolbar</p>
+        <Toolbar pageTitle={props.pageTitle} />
         {props.children}
     </div>
 )
