@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout/Layout'
+import MovieSelector from './containers/MovieSelector/MovieSelector'
 import PosterGrid from './components/PosterGrid/PosterGrid'
-import Toolbar from './components/Toolbar/Toolbar'
+import MovieDetailView from './containers/MovieDetailView/MovieDetailView';
+
 
 /*
 * https://api.themoviedb.org/3/movie/550?api_key=5d1c10a50fcbc080eb1e67449233dfc2
@@ -16,6 +19,11 @@ const TMDB_API_KEY = '5d1c10a50fcbc080eb1e67449233dfc2';
 const movies_path = 'https://api.themoviedb.org/3/movie/popular';
 
 class App extends Component {
+  state = {
+    pageTitle: 'Popular Movies'
+  }
+
+  /*
   state = {
     apiKey: TMDB_API_KEY,
     movies: [],
@@ -43,19 +51,20 @@ class App extends Component {
           this.setState({movies: newMovies, connected: true});
         }).catch((error) => {
           this.setState({connected: false});
-        });/**/
-      // TODO - implement axios
-      /*
-      */
-  }
+        });
+  }*/
 
   render() {
     return (
-      <div className="App">
-        <Layout pageTitle={this.state.pageTitle}>
-            <PosterGrid movies={this.state.movies} movieSelected={this.movieSelectedHandler} />
-        </Layout>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Layout pageTitle={this.state.pageTitle}>
+              {/*<PosterGrid movies={this.state.movies} movieSelected={this.movieSelectedHandler} />*/}
+              <Route path='/movie/:id' component={MovieDetailView} />
+              <Route path='/' exact component={MovieSelector} />
+          </Layout>
+        </div>
+      </BrowserRouter>
     );
   }
 }
