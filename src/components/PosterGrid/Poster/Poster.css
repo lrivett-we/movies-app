@@ -1,5 +1,21 @@
 .Poster {
-    flex: 0 1 25%;
+    flex: 1 1 25%;
     margin: 0;
     padding: 0;
+}
+
+@media (max-width: 1100px){
+    .Poster {
+        flex-basis: 33%;
+    }
+}
+
+@media (max-width: 800px){
+    .Poster {
+        flex-basis: 50%;
+    }
+}
+
+.Poster img {
+    width: 100%;
 }

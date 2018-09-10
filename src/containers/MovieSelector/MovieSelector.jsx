@@ -4,8 +4,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import PosterGrid from '../../components/PosterGrid/PosterGrid'
 import Layout from '../../components/Layout/Layout';
-const TMDB_API_KEY = '5d1c10a50fcbc080eb1e67449233dfc2';
 
+const TMDB_API_KEY = '5d1c10a50fcbc080eb1e67449233dfc2';
 const movies_path = 'https://api.themoviedb.org/3/movie/popular';
 
 class MovieSelector extends Component {
@@ -21,7 +21,6 @@ class MovieSelector extends Component {
       }
     
       updateMovieList = () => {
-          // query the list of movies and use it to update the state
           axios.get(movies_path, {params: {api_key: this.state.apiKey}})
             .then((response) => {
               const newMovies = response.data.results.map(
@@ -34,7 +33,7 @@ class MovieSelector extends Component {
       }
 
     render() {
-        return <Layout pageTitle="Popular Movies"><PosterGrid movies={this.state.movies}  /></Layout>
+        return <Layout pageTitle="Popular Movies" defaultPage><PosterGrid movies={this.state.movies}  /></Layout>
     }
 }
 

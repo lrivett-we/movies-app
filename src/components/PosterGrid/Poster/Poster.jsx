@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import './Poster.css'
 
 const poster = (props) => (
-    <Link to={`/movie/${props.movieId}`}>
-        <img className='Poster' src={props.imageSrc} alt={props.movieName} />
+    <Link className='Poster' to={`/movie/${props.movieId}`}>
+        <img  src={props.imageSrc} alt={props.movieName} />
     </Link>
 )
 

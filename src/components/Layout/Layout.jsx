@@ -6,7 +6,7 @@ import './Layout.css'
 const layout = (props) => {
 
     return (<div>
-        <Toolbar pageTitle={props.pageTitle} withBackButton={props.withBackButton} />
+        <Toolbar pageTitle={props.pageTitle} withBackButton={!props.defaultPage} />
         <div className='LayoutContent'>
             {props.children}
         </div>
