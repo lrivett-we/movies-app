@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './MovieDetailView.css'
+import Layout from '../../components/Layout/Layout';
+import './MovieDetailView.css';
 
 const TMDB_API_KEY = '5d1c10a50fcbc080eb1e67449233dfc2';
 
@@ -33,13 +34,15 @@ class MovieDetailView extends Component {
             return <p>No result found.</p>
         }
         return (
-            <div>
-                <header className="MovieTitleHeader"><span>{this.state.movie.original_title}</span></header>
-                <img src={`http://image.tmdb.org/t/p/w185//${this.state.movie.poster_path}`} /><br/>
-                <span>{this.state.movie.release_date}</span><br/>
-                <span>{this.state.movie.vote_average}/10</span>
-                <p>{this.state.movie.overview}</p>
-            </div>
+            <Layout pageTitle="Movie Details" withBackButton>
+                <div>
+                    <header className="MovieTitleHeader"><span>{this.state.movie.original_title}</span></header>
+                    <img src={`http://image.tmdb.org/t/p/w185//${this.state.movie.poster_path}`} /><br/>
+                    <span>{this.state.movie.release_date}</span><br/>
+                    <span>{this.state.movie.vote_average}/10</span>
+                    <p>{this.state.movie.overview}</p>
+                </div>
+            </Layout>
         )
     }
 }

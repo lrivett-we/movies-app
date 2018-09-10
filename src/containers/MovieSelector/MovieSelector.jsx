@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import PosterGrid from '../../components/PosterGrid/PosterGrid'
-
+import Layout from '../../components/Layout/Layout';
 const TMDB_API_KEY = '5d1c10a50fcbc080eb1e67449233dfc2';
 
 const movies_path = 'https://api.themoviedb.org/3/movie/popular';
@@ -34,7 +34,7 @@ class MovieSelector extends Component {
       }
 
     render() {
-        return <PosterGrid movies={this.state.movies}  />
+        return <Layout pageTitle="Popular Movies"><PosterGrid movies={this.state.movies}  /></Layout>
     }
 }
 

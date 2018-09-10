@@ -1,6 +1,10 @@
-.PosterGrid {
+.PosterGridNOTUSED {
     display: grid;
     width: 100%;
     grid-template-columns: auto auto auto auto;
     grid-row-gap: 0;
+}
+.PosterGrid {
+    display: flex;
+    flex-wrap: wrap;
 }

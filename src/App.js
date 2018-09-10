@@ -58,11 +58,11 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Layout pageTitle={this.state.pageTitle}>
-              {/*<PosterGrid movies={this.state.movies} movieSelected={this.movieSelectedHandler} />*/}
-              <Route path='/movie/:id' component={MovieDetailView} />
-              <Route path='/' exact component={MovieSelector} />
-          </Layout>
+          {/*<Layout pageTitle={this.state.pageTitle}>
+              {/*<PosterGrid movies={this.state.movies} movieSelected={this.movieSelectedHandler} />*  
+            </Layout>*/} 
+          <Route path='/movie/:id' component={MovieDetailView} />
+          <Route path='/' exact component={MovieSelector} />
         </div>
       </BrowserRouter>
     );

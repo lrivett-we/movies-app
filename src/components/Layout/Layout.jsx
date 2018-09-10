@@ -4,12 +4,9 @@ import Toolbar from '../Toolbar/Toolbar'
 import './Layout.css'
 
 const layout = (props) => {
-    console.log(props);
-    let pageTitle = 'Popular Movies';
-    //if (props.)
 
     return (<div>
-        <Toolbar pageTitle={pageTitle} />
+        <Toolbar pageTitle={props.pageTitle} withBackButton={props.withBackButton} />
         <div className='LayoutContent'>
             {props.children}
         </div>
