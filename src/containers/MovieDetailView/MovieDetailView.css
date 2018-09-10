@@ -1,0 +1,14 @@
+.MovieTitleHeader {
+    height: 80px;
+    background-color: teal;
+    text-align: left;
+}
+.MovieTitleHeader span {
+    font: Helvetica;
+    color: white;
+    height: 100%;
+    font-size: 40px;
+    text-emphasis: normal;
+    vertical-align: middle;
+    padding: 20px;
+}

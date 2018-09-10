@@ -4,7 +4,7 @@ import './Poster.css'
 
 const poster = (props) => (
     <Link to={`/movie/${props.movieId}`}>
-        <img className='Poster' src={props.imageSrc} alt={props.movieName} onClick={props.clickFunction} />
+        <img className='Poster' src={props.imageSrc} alt={props.movieName} />
     </Link>
 )
 

@@ -20,12 +20,6 @@ class MovieSelector extends Component {
           this.updateMovieList();
       }
     
-      movieSelectedHandler = (movie_id) => {
-          // called when a poster is clicked on
-          const movie = this.state.movies.find((movie) => movie.id === movie_id);
-          alert(movie.original_title);
-      }
-    
       updateMovieList = () => {
           // query the list of movies and use it to update the state
           axios.get(movies_path, {params: {api_key: this.state.apiKey}})
@@ -40,7 +34,7 @@ class MovieSelector extends Component {
       }
 
     render() {
-        return <PosterGrid movies={this.state.movies} movieSelected={this.movieSelectedHandler} />
+        return <PosterGrid movies={this.state.movies}  />
     }
 }
 

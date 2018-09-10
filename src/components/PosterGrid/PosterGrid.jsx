@@ -9,7 +9,6 @@ const posterGrid = (props) => {
             imageSrc={`http://image.tmdb.org/t/p/w185//${movie.poster_path}`} 
             movieName={movie.original_title}
             movieId={movie.id}
-            clickFunction={() => props.movieSelected(movie.id)} 
         />
     );
 
